@@ -1,0 +1,29 @@
+.custom-modal .modal-content {
+  border-radius: 20px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.modal-img {
+  max-height: 350px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.modal-img:hover {
+  transform: scale(1.05);
+}
+
+.modal-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.modal-header {
+  padding-bottom: 0;
+}
+
+.modal-title {
+  font-size: 1.3rem;
+}
