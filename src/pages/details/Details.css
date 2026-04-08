@@ -1,0 +1,88 @@
+.mt-n5 {
+  margin-top: -100px;
+}
+
+.banner {
+  position: relative;
+  z-index: -300;
+}
+
+.banner > div {
+  background-position: center center;
+}
+
+.banner-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 250px;
+
+
+  background: linear-gradient(
+    to bottom,
+    rgba(43, 49, 49, 0) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    #14181c 100%
+  );
+}
+
+.movie-content {
+  z-index: 1000;
+  /* transform: translateY(-20px); */
+}
+
+.star-icon {
+  color: gold;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #ff3d00;
+}
+
+.heart {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  font-size: 1.6rem;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.heart:hover {
+  color: #ff8000;
+  transform: scale(1.2);
+}
+
+.love {
+  color: #ff8000;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

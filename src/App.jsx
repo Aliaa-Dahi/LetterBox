@@ -1,31 +1,30 @@
-import React, { useEffect, useRef, useState } from "react";
-import Container from "./Components/Container/Container";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Components/Layout/Layout";
+import TopRated from "./pages/TopRated/TopRated";
+import Home from "./pages/Home/Home.jsx";
+import Details from "./pages/details/Details";
+import NotFound from "./pages/NotFound/NotFound";
+import Favourites from "./pages/Favourites/Favourites.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
+import axios from "axios";
+
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
 const App = () => {
-  const [movies, setMovies] = useState({});
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ODQ4ZWE2YmU5MzM0M2JlMGJiODc5YTVjYjY0YjI5MSIsIm5iZiI6MTc3NDc5NTA0Ny45Miwic3ViIjoiNjljOTM5Mjc2M2UwMGFjNzlkMDFlNzkwIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.EcQTkwFKJPKWCC4_OTxkanDqNXJPdszoK2sv26hn8t4",
-      },
-    };
-
-    fetch("https://api.themoviedb.org/3/movie/top_rated", options)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data);
-        // console.log(data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
   return (
-    <>
-      <Container movies={movies} />
-    </>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/top-rated" element={<TopRated />} />
+          <Route path="/details/:id?" element={<Details />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 };
 

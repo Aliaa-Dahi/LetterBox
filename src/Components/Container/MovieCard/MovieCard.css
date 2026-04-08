@@ -3,16 +3,53 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  background-color: #1e252c !important;
 }
 
-.movie-img {
-  height: 200px;
+.card-img {
+  border: 1px solid rgba(128, 128, 128, 0.425);
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.card-img:hover {
+  border: 2px solid #fff;
+}
+
+.card-img img {
+  height: 400px;
   object-fit: cover;
   /* width: 100%; */
 }
 
 .card-body {
-  position: relative;
+  color: #678 !important;
+  /* background-color: red; */
+  /* position: relative; */
+}
+
+.card-body .eye-icon {
+  color: #00c030;
+}
+
+.card-body .star-icon {
+  color: gold;
+}
+
+.card-body > div {
+  display: flex;
+  /* background-color: red; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body span {
+  transition: 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.card-body span:hover {
+  color: #fff;
 }
 
 .card-title {
@@ -30,7 +67,7 @@
   height: 50px;
 
   border-radius: 50%;
-  background: #081c22;
+  /* background: #081c22; */
   border: 2px solid #28a745;
 
   display: flex;
@@ -40,4 +77,14 @@
   color: #fff;
   font-weight: bold;
   font-size: 0.9rem;
+}
+
+.love {
+  color: #ff8000;
+  text-shadow: #fff #eee 5px;
+  /* align-self: center; */
+}
+
+.heart {
+  color: #aaa;
 }

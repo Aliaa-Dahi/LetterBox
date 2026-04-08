@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* min-height: 100%; */
+  background-color: #1e252c !important;
+}
+
+*::selection {
+  color: #fff;
+  background-color: #00E054;
+}

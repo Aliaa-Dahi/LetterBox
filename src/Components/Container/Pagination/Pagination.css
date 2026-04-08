@@ -1,0 +1,33 @@
+.pagination {
+  gap: 6px;
+}
+
+.page-item .page-link {
+  border: none;
+  border-radius: 12px;
+  padding: 6px 12px;
+  color: #333;
+  background-color: #f1f1f1;
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.page-item .page-link:hover {
+  background-color: #dcdcdc;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* active */
+.page-item.active .page-link {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+  transform: scale(1.05);
+}
+
+/* optional: remove focus outline */
+.page-link:focus {
+  box-shadow: none;
+}
